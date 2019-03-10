@@ -29,5 +29,3 @@ dependecies.
 
 10. Now run selenium server by typing in gitbash: ./node_modules/.bin/selenium-standalone start, open in 
 the browser, http://127.0.0.1:4444/wd/hub/static/resource/hub.html.  ctrl + c will stop the server.
-
-11.
