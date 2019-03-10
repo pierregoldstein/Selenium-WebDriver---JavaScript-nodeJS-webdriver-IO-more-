@@ -1,0 +1,33 @@
+
+
+Section 2
+
+1.  Install git and node.
+
+2.  Create folder for webdriver IO:
+- mkdir WebdriverIOFramework
+
+3.  Open GitBash and navigate to the 'WebdriverIOFramework' folder & run npm init
+- Except all the settings as default, if you so choose, you can write your names as author.
+
+4.  Got to npmjs.com and in the search type 'webdriverio' and search for version 4.13.2, 
+do not get the newest version yet.
+
+5.  If gitbash is still open and you are in the same folder, run npm install -save -dev webdriverio@4.13.2
+
+6.  Also install Mocha, run npm install -save -dev mocha@5.2.0
+**note: As long as you have your dependecies listed in package.json, just run npm install and all your 
+dependecies will install
+
+7.  Delete the node_modules folder to reset the project, also go into package.json file and delete the 
+dependecies.
+
+8.  Now run npm install -save -dev webdriverio@4.13.3 selenium-standalone@6.15.3
+
+9.  After updating the dependecies in package.json, install selenium-standlone server: 
+./node_modules/.bin/selenium-standalone install
+
+10. Now run selenium server by typing in gitbash: ./node_modules/.bin/selenium-standalone start, open in 
+the browser, http://127.0.0.1:4444/wd/hub/static/resource/hub.html.  ctrl + c will stop the server.
+
+11.
