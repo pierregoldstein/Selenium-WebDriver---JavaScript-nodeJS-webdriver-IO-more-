@@ -25,7 +25,7 @@ client
     // .setValue('#search_from_input_homepage', 'WebdriverIO')
     .click('#login-portal') // The '#' symbol is used to identify 'id' in html
     .getTitle().then(function(title){
-        alert('Title is: '+title);
+        console.log('Title is: '+title);
     })
     .click('#contact-us')
     .pause(3000)

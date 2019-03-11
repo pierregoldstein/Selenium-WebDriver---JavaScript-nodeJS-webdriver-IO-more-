@@ -1,9 +1,4 @@
-var webdriverio = require('webdriverio');
-var options = { desiredCapabilities: { browserName: 'chrome' } };
-var client = webdriverio.remote(options);
-
-client
-    .init()
+browser
     .setViewportSize({
     	width: 1200,
     	height: 800
@@ -14,4 +9,3 @@ client
     })
     .click('#contact-us')
     .pause(3000)
-    .end();

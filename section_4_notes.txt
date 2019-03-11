@@ -1,0 +1,63 @@
+WDIO configuration allows you to intergrate test, add web hooks, trigger selenium-standalone 
+server without having to invoke it, handle different browsers and even generate reports.  
+
+More information about WDIO files's goto:  https://webdriver.io/docs/clioptions.html
+
+1.  Use gitbash to open your project folder.
+
+2.  Type 'ls node_ modules/.bin/', check to see if the WDIO folder exist
+
+3.  Start the WDIO configuration helper by typing './node_modules/.bin/wdio'
+
+$ ./node_modules/.bin/wdio
+
+=========================
+WDIO Configuration Helper
+=========================
+
+? Where do you want to execute your tests? On my local machine
+? Which framework do you want to use? mocha
+? Shall I install the framework adapter for you? Yes
+? Where are your test specs located? ./tests/**/*.js
+? Which reporter do you want to use?
+? Do you want to add a service to your test setup?
+? Level of logging verbosity silent
+? In which directory should screenshots gets saved if a command fails? ./errorS
+hots/
+? What is the base url? (http://localhost) www.webdriveruniveristy.com
+
+Installing wdio packages:
+
+Packages installed successfully, creating configuration file...
+
+Configuration file was created successfully!
+To run your tests, execute:
+
+$ wdio wdio.conf.js
+
+**note: if selenium-standalone complains about port 4444 being busy, from the command line, 
+run 'netstat -ano | findstr:4444', then run 'taskkill /PID[*number*] /F
+
+4. Using your text editor, open wdio configuration file located in the WebdriverIOFramework folder, under 
+capabilities, change the default browser from firefox to Chrome.
+
+5.  Create a folder at the root level of the project called test.  Drop the current test created in 
+the previous section in the folder.
+
+6.  Now type './node_modules/.bin/wdio'.  All the test placed in the folder will execute with no text.
+
+7. Goto the test folder and open up 'contactUsTest.js'
+
+8. Remove:  var webdriverio = require('webdriverio');
+            var options = { desiredCapabilities: { browserName: 'chrome' } };
+            var client = webdriverio.remote(options);
+            client.init()
+            .end()
+(WDIO confg file will handle the code we removed)
+
+9.  Now add 'browser' to the top of he code on 'contactUsTest.js'
+
+10.  Repeat steps 7-9 for loginPortalTest.js
+
+11.  Type './node_modules/.bin/wdio' to test the changes made.
+
