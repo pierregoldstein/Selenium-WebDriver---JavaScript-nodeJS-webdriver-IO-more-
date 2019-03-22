@@ -1,0 +1,28 @@
+Base Url
+
+1. We can setup a base url in our wdio.conf.js to follow 'dry' standards.
+
+2. At the top of wdio.conf.js file add "var baseURL = 'http://www.wendriveruniveristy.com';" to set our 
+base url.
+
+3. After creating the variable, look for an object called 'baseUrl' and set it equal to our created 
+variable.
+
+4. Now go to the tests folder and remove browser.url() function from WebDriverUniveristy.js file.
+
+5. To alter the basUrl at runtime, npm -- --baseUrl=http://webdriveruniversity.com
+
+Handling Multiple Enviroments During runtime
+
+1.  For situations that require testing multiple Enviromentslike sprints or regression testing, 
+lets add if statement logic to determine which urls to use based off of our testing enviroments.
+
+var baseURL; //= 'http://www.webdriveruniveristy.com';
+
+if(process.env.SERVER === 'prod'){
+    baseURL = 'https://google.com';
+} else {
+    baseURL = 'http://www.webdriveruniveristy.com';
+}
+
+Open gitbash in your project root directory and run SERVER=prod npm test
