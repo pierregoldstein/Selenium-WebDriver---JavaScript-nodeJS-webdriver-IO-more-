@@ -1,0 +1,68 @@
+Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making 
+asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate 
+reporting, while mapping uncaught exceptions to the correct test cases.
+
+1.  Goto https://www.npmjs.com/package/mocha and follow the directions to install mocha.
+npm install -save -dev mocha@latest, be sure to install in the root of your project directory.
+
+2.  After installing mocha, create a js file in your test folder called WebDriverIOUniversity.js.
+
+3.  Begin writing a statement on the newly created file using describe & it. This will be used to group 
+and list your test cases.  Take the code from contactUsTest.js and copy it inside 'it'. Add a return 
+statement in front of browser object.
+
+i.e.
+
+describe("Verify webdriveruniveristy links on homepage work correctly", function(){
+    it("check that the Contact us button opens the Contact Us page", function(done){
+        return browser
+    .setViewportSize({
+    	width: 1200,
+    	height: 800
+    })
+    .url('http://www.webdriveruniversity.com/')
+    .getTitle().then(function(title) {
+        console.log('Title is: ' + title);
+    })
+    .click('#contact-us')
+    .pause(3000)
+    });
+});
+
+4. Repeat step 3 but with the loginPortal.js file.
+
+i.e.
+
+describe("Verify webdriveruniveristy links on homepage work correctly", function(){
+    it("check that the Contact us button opens the Contact Us page", function(done){
+        return browser
+    .setViewportSize({
+    	width: 1200,
+    	height: 800
+    })
+    .url('http://www.webdriveruniversity.com/')
+    .getTitle().then(function(title) {
+        console.log('Title is: ' + title);
+    })
+    .click('#contact-us')
+    .pause(3000)
+    });
+
+    it("check that the Login button opens the Login Portal page", function(){
+        return browser
+    .url('http://www.webdriveruniversity.com/')
+    .click('#login-portal')
+    .getTitle().then(function(title){
+        console.log('Title is: '+title);
+    })
+    });
+});
+
+5.  Remove loginPortal.js & contactUsTest.js from the test folder.
+
+6.  Open up gitbash in the project root folder and run: $ ./node_modules/.bin/selenium-standalone start,
+to start the selenium server.
+
+7.  Open another gitbash instance in the project root and run the command: $ ./node_modules/.bin/wdio, 
+to run the newly created mocha test.
+

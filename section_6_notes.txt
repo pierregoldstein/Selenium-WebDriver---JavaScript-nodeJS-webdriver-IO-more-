@@ -45,3 +45,8 @@ Output:
 
 Hello world
 Query has finished
+
+4. Because webdriver.io runs on node, we can take advantage of asynchronous calls, this can be done by 
+enabling sync mode in our wdio.conf.js file.  Look for a object call "sync" and change it to 'true'.
+
+5.  Now the code can be simplified because the code will now run asynchronously.

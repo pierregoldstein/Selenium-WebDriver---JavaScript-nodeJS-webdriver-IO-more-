@@ -1,0 +1,17 @@
+{
+  "name": "webdriverioFramework",
+  "version": "1.0.0",
+  "description": "Webdriverio Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "author": "Gianni Bruno",
+  "license": "ISC",
+  "devDependencies": {
+    "selenium-standalone": "^6.15.3",
+    "wdio-mocha-framework": "^0.6.3",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.13.2"
+  }
+}
