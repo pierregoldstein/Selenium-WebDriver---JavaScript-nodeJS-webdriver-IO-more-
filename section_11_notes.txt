@@ -1,0 +1,46 @@
+Chai assertions
+
+1.  Chai provides further capability to adding assertions to your test.
+
+2.  npm install chai@latest -save -dev
+
+3.  Create a file name chaitest.js in the test folder of your project directory.  3 different styles 
+of assertions in chai:
+
+var assert = require('chai').assert;
+var expect = require('chai').expect;
+var should = require('chai').should();
+
+var actual = 1;
+var expected = 2;
+
+assert.equal(actual.expected);
+expect(actual).to.equal(expected);
+actual.should.equal.(expected);
+
+4.  To target just the chai test, we can use 'npm test -- --spec=tests/chaitest.js'
+
+5.  Lets modify the WebDriverIOUniveristy.js file by removing the require('assert') to:
+var expect = require('chai').expect;
+var should = require('chai').should();
+
+and removing are current assertions with:
+
+expect(title).to.equal('WebDriverUniversity.com');
+title.should.equal('WebDriverUniversity.com');
+
+6.  To centralize our assertions,  go to the wdio.conf.js file and uncomment the before object.  
+Inside the function, take the newly required assertions we have in the WebDriverIOUniveristy.js and 
+place them in the before functon like so:
+
+expect = require('chai').expect;
+should = require('chai').should();
+
+Be sure to remove the var as its not needed.  This change wll keep us from having to constantly 
+require the new assertions in the case we are running multiple test.
+
+7.  Remove var expect = require('chai').expect & var should = require('chai').should() from the top of
+the WebDriverIOUniveristy.js file and save it.  Run the test.
+
+
+

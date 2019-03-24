@@ -13,5 +13,8 @@
     "wdio-mocha-framework": "^0.6.3",
     "wdio-selenium-standalone-service": "0.0.10",
     "webdriverio": "^4.13.2"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
   }
 }

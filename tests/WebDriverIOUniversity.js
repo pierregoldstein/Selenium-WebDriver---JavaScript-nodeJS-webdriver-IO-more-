@@ -1,5 +1,3 @@
-var assert = require('assert');
-
 describe("Verify webdriveruniveristy links on homepage work correctly", function(){
     it("check that the Contact us button opens the Contact Us page", function(done){
         browser.setViewportSize({
@@ -8,7 +6,7 @@ describe("Verify webdriveruniveristy links on homepage work correctly", function
             })  
         browser.url('/');
         var title = browser.getTitle();
-        assert.equal(title, 'WebDriverUniversity.com')
+        expect(title).to.equal('WebDriverUniversity.com');
         var title = browser.getTitle()
         console.log('Title is: ' + title);
             
@@ -19,7 +17,7 @@ describe("Verify webdriveruniveristy links on homepage work correctly", function
     it("check that the Login button opens the Login Portal page", function(){
         browser.url('/');
         var title = browser.getTitle();
-        assert.equal(title, 'WebDriverUniversity.com')
+        title.should.equal('WebDriverUniversity.com');
         browser.click('#login-portal')
         var title = browser.getTitle()
         console.log('Title is: '+ title);
