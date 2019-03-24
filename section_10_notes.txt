@@ -1,0 +1,5 @@
+Assertions
+
+1.  Navigate to nodejs.org/api/assert.html
+
+2.  Assertions are useful to veriry that our base url exists
