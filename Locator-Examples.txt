@@ -1,0 +1,33 @@
+XPATH EXAMPLES:
+//h2[starts-with(text(),'The View')]
+//div[@id='search']//div[position()=2]
+//link[starts-with(@href, '/Content/HtmlTemplates/')]
+//td[contains(@A,'t')]
+//div/following-sibling::div
+/html/body/.../.../.../td
+//td[contains(text(),'service')][last()]/following-sibling::td[2]
+//input[@id='nameOfID']//a[text()='exampleText']
+.//*[@id='guest_personal_details']//button[contains(text(),'Continue »')]")
+//span[text()='Reference no:']/following-sibling::span
+//a[contains(text(),'Not registered? Click here to create an account »')]
+
+//input[contains[@id, 'email']
+//input[contains[@class, 'email']
+//input[contains[@name, 'email']
+//form/input[last()]
+//form/input[last()-1]
+//label[starts-with(text(), 'keep')]
+//label[starts-with(@class, 'keep')]
+
+---------------------------------------------------------------------------
+CSS EXAMPLES:
+input#find_top
+input.btn
+.input
+input[id=’find’][type=’button’]
+form input:nth-of-type(1)
+form > input:nth-of-type(1)
+input[id^=’qui’]     //starts with
+input[id$=’qui’]    //ends with
+input[id*=’qui’]    //wildcard will find all 
+

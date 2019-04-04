@@ -7,20 +7,19 @@ describe("Verify webdriveruniveristy links on homepage work correctly", function
         browser.url('/');
         var title = browser.getTitle();
         expect(title).to.equal('WebDriverUniversity.com');
-        var title = browser.getTitle()
-        console.log('Title is: ' + title);
-            
-        browser.click('#contact-us')
-        browser.pause(3000)
+        console.log('Title is: '+title);
+        browser.debug();    
+        browser.click('#contact-us');
+        browser.pause(3000);
     });
 
-    it("check that the Login button opens the Login Portal page", function(){
+    it("Check that the Login button opens the Login Portal page", function(){
         browser.url('/');
+        browser.click('#login-portal');
         var title = browser.getTitle();
         title.should.equal('WebDriverUniversity.com');
-        browser.click('#login-portal')
-        var title = browser.getTitle()
         console.log('Title is: '+ title);
+        browser.pause(3000);
     });
 });
 
