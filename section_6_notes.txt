@@ -1,52 +1,57 @@
-Section 3 notes
+1. Go into wdio.conf.js and change the value of sync from false to true.  This will turn on sync mode.
 
-1.  Copy and paste exmplae code from Webdriver.io:
+2. Turning on sync mode allows synchronous calls. Instead of returning a browser object.  You can just 
+add browser to every call function, i.e.(located in the tests directory/WebDriverIOUniverity.js):
 
-var webdriverio = require('webdriverio');
-var options = {
-    desiredCapablities: {
-        browserName: 'chrome'
-    }
-};
-var client = webdriverio.remote(options);
+********************  Old code  ********************
 
-client
-    .init()
-    .url('https://duckduckgo.com/')
-    .setValue('#search_from_input_homepage', 'WebdriverIO')
-    .click('#search_button_homepage')
-    .getTitle().then(function(title){
-        console.log('Title is: '+title);
-    })
-    .end();
+describe("Verify webdriveruniveristy links on homepage work correctly", function(){
+    it("check that the Contact us button opens the Contact Us page", function(done){
+        return browser
+                .setViewportSize({
+    	        width: 1200,
+    	        height: 800
+            })  
+                .url('http://www.webdriveruniversity.com/')
+                .getTitle().then(function(title) {
+                    console.log('Title is: ' + title);
+            })
+                .click('#contact-us')
+                .pause(3000)
+    });
 
-2. Examples of sychronous and asynchronous:
-
-Synchronous:
-
-var result = databse.query("SELECT * FROM exampleTable");
-console.log("Query has finished");
-console.log("Hello world");
-
-Output:
-
-Query has finished
-Hello world
-
-Asynchronous:
-
-databse.query("SELECT * FROM exampleTable", function(result){
-    console.log("Query has finished");
+    it("check that the Login button opens the Login Portal page", function(){
+        return browser
+                .url('http://www.webdriveruniversity.com/')
+                .click('#login-portal')
+                .getTitle().then(function(title){
+                     console.log('Title is: '+title);
+        })
+    });
 });
-console.log("Hello world");
 
+********************  New code  ********************
 
-Output:
+describe("Verify webdriveruniveristy links on homepage work correctly", function(){
+    it("check that the Contact us button opens the Contact Us page", function(done){
+        browser.setViewportSize({
+    	        width: 1200,
+    	        height: 800
+            })  
+        browser.url('http://www.webdriveruniversity.com/')
+        var title = browser.getTitle()
+        console.log('Title is: ' + title);
+            
+        browser.click('#contact-us')
+        browser.pause(3000)
+    });
 
-Hello world
-Query has finished
+    it("check that the Login button opens the Login Portal page", function(){
+        browser.url('http://www.webdriveruniversity.com/')
+        browser.click('#login-portal')
+        var title = browser.getTitle()
+        console.log('Title is: '+ title);
+    });
+});
 
-4. Because webdriver.io runs on node, we can take advantage of asynchronous calls, this can be done by 
-enabling sync mode in our wdio.conf.js file.  Look for a object call "sync" and change it to 'true'.
-
-5.  Now the code can be simplified because the code will now run asynchronously.
+3. Go to your wdio.conf.js file and uncomment services=[], and change it to: services: ['selenium-standalone']
