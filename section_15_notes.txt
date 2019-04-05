@@ -1,4 +1,4 @@
-Mocha Hooks
+Section 15 - Mocha Hooks
 
 1.  Navigate to Mochajs.org and look up the hooks section.  With hooks, functions can be executed before, after, before each and after each test.
 

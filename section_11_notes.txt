@@ -1,3 +1,5 @@
+Section 11 - Chai
+
 Chai assertions
 
 1.  Chai provides further capability to adding assertions to your test.

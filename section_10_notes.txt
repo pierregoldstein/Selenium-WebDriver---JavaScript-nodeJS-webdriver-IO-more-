@@ -1,4 +1,4 @@
-Assertions
+Section 10 - Node Assertions
 
 1.  Navigate to nodejs.org/api/assert.html
 

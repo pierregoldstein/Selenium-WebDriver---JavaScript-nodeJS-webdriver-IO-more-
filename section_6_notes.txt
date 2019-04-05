@@ -1,3 +1,5 @@
+Section 6 - WDIO sync mode
+
 1. Go into wdio.conf.js and change the value of sync from false to true.  This will turn on sync mode.
 
 2. Turning on sync mode allows synchronous calls. Instead of returning a browser object.  You can just 

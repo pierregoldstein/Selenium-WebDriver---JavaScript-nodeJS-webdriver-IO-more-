@@ -1,3 +1,5 @@
+Section 12 - Pause, Debug mode & Selectors
+
 1.  Navigate to webdriver.io and in the search part of the page type in 'pause'.
 
 2.  Learn abou tthe pause function for the nest excercise dealing with ajax loader.

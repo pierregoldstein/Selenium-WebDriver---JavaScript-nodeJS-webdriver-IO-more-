@@ -1,0 +1,5 @@
+Section 13 - Targeting & Skipping Specific Tests
+
+1.  To target individual test with mochajs, use the 'only' function.
+
+2.  If you choose to skip test, use the skip function.
