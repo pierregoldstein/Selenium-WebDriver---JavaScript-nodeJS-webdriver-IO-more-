@@ -1,0 +1,23 @@
+Mocha Hooks
+
+1.  Navigate to Mochajs.org and look up the hooks section.  With hooks, functions can be executed before, after, before each and after each test.
+
+2.  Go to Webdriveruniveristy.com and go to the 'contact us' section.  Here we can wire up a test suite of test and hooks to test the 'contact us' form.
+
+3.  Lets get the url of the 'contact us' page, http://www.webdriveruniversity.com/Contact-Us/contactus.html, but remember, we only need '/Contact-Us/contactus.html' 
+as we have the url saved in baseUrl on the wdio.conf.js file located in the root directory.
+
+4.  Now lets add the boiler plate code and add the 'beforeEach()' hook and add the url so we can trigger that before running the test.
+
+5.  Now us the inspect toll and create the locators to test the page.  Use Ranorex to create a css locators for every field to use later in our test.  You can also right click 
+and use Ranorex on the element directly to get the css locator.
+
+6.  In order to add values to the fields in the form of the 'contact us' page, let us navigate to webdriver.io and search for the setValue function.
+
+7.  Let us populate the values in our 'describe' block into the 'it' block functions using 'browser.setValue("['location of the field']", value)'.
+
+8.  After populating test with data we recieved form Ranorex, open gitbash in the root directory of the project and run ' npm test -- --spec=tests/contactUsTest.js'
+
+
+
+
