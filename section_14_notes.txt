@@ -1,0 +1,3 @@
+Section 14 - CSS Extractions
+
+1.  The getCssProperty is a great way to get css attributes from running test, such as: height, width, color & type to name a few.

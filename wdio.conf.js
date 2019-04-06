@@ -1,11 +1,12 @@
 
-var baseURL; //= 'http://www.webdriveruniveristy.com';
+var baseURL = 'http://www.webdriveruniversity.com/';
+var timeout = process.env.DEBUG ? 99999999 : 10000; // Create a timeout varibale that if its set to true that it will run for 99999999 else it will default to 10 seconds
 
-if(process.env.SERVER === 'prod'){
-    baseURL = 'https://google.com';
-} else {
-    baseURL = 'http://www.webdriveruniveristy.com';
-}
+// if(process.env.SERVER === 'prod'){
+//     baseURL = 'https://google.com';
+// } else {
+//     baseURL = 'http://www.webdriveruniveristy.com';
+// }
 exports.config = {
     
     //
@@ -88,7 +89,7 @@ exports.config = {
     baseUrl: baseURL,
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 60000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -136,7 +137,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: timeout // Create a timeout varibale that if its set to true that it will run for 99999999 else it will default to 10 seconds
     },
     //
     // =====

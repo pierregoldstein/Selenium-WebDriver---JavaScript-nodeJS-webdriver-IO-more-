@@ -1,4 +1,4 @@
-Section 3 notes
+Section 3 - Creating our first test
 
 1.  Copy and paste exmplae code from Webdriver.io:
 

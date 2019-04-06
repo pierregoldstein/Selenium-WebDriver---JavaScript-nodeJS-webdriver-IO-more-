@@ -1,3 +1,5 @@
+Section 9 - Logging
+
 Logging During Runtime
 
 1.  Scripts can be logged at runtime with this command: npm test -- --logLevel=verbose

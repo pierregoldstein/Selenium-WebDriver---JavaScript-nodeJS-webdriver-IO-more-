@@ -1,0 +1,48 @@
+Section 12 - Pause, Debug mode & Selectors
+
+1.  Navigate to webdriver.io and in the search part of the page type in 'pause'.
+
+2.  Learn abou tthe pause function for the nest excercise dealing with ajax loader.
+
+3.  Navigate to 'http://www.webdriveruniversity.com/' and find the section called 'Ajax Loader'.
+
+4.  Go into the test directory and create a file called 'ajaxclicktest.js'.
+
+5.  First create a function without pause using mocha and 'describe and it'.
+
+6.  Go to 'http://www.webdriveruniversity.com/'  click on the ajax loader section and inspect the 'click me' button to get the id to use for the click test in mocha.
+
+7.  Create two functions using mocha in the ajaxclicktest.js file, one with pause of 7 seconds and one without any pauses.  When creating browser.url funcion, since we already have the url 
+saved in the baseUrl object 'http://www.webdriveruniversity.com/', we dont need ot write the whole url, just '/Ajax-Loader/index.html' like so: browser.url('/Ajax-Loader/index.html').
+
+8.  Run 'npm test -- --spec=tests/ajaxclicktest.js' so we can specify the ajax test as we have more than one test file in the test folder.
+
+9.  Web driver has a debug function to debus issues running test.   This can be found in the search of the webdrive.io website.
+
+10. Edit the wdio.conf.js file,   Create a timeout varibale that if its set to true that it will run for 99999999 else it will default to 10 seconds.
+
+11. Now lets edit ajaxclicktest.js to add the debug mode to our test using browser.debug().
+
+
+***  If using VS Code to run test scripts, be sure to follow this tutorial to run DEBUG in VS code, https://www.intricatecloud.io/2019/03/debugging-webdriverio-tests-with-vscode/ ***
+
+12.  Open gitbash in the root diretory of your project and type 'DEBUG=true npm test -- --spec=WebDriverIOUniversity.js', thi swill aloow us to enter debug mode to step 
+through our code.*** From there we can inspect a page as we are stepping through it, i.e.: 
+> $('#contact-us')
+
+< m.fn.init [a#contact-us, context: document, selector: "#contact-us"]
+0: a#contact-us
+context: document
+length: 1
+selector: "#contact-us"
+__proto__: Object(0) 
+
+13.  Whenever writing test for a site, we need to create locators that can find selectors to interact with the website.  Lets go to the Chrome web store and install 
+the extension  'Ranorex Selocity'.  Ranorex will allow us to create locators easily.
+
+14.  Navigate to the WebDriverIOUniversity page and right click to inspect.
+
+15.  Click on Ranorex and type in //p, it will in turn search every p tag in the dom.  Click the dropdown and select the xpath locator, type //span[@id='button1'] 
+** the two forward slashes, //, translate to startiung at the top of the DOM or root.  One forward slash goes one level down. **
+
+16.  To isiolate the p tag  we can type //span[@id='button1']/p[text()='CLICK ME!']

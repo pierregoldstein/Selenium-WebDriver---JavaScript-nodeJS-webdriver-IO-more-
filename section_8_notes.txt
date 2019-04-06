@@ -1,3 +1,5 @@
+Section 8 - Enviroments & Base url
+
 Base Url
 
 1. We can setup a base url in our wdio.conf.js to follow 'dry' standards.

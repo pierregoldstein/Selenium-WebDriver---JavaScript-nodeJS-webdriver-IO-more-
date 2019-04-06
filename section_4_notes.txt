@@ -1,3 +1,5 @@
+Section 4 - WDIO
+
 WDIO configuration allows you to intergrate test, add web hooks, trigger selenium-standalone 
 server without having to invoke it, handle different browsers and even generate reports.  
 

@@ -1,0 +1,44 @@
+Section 16  - Handling Browser Window Tabs
+
+1.  Navigate to 'webdriver.io' and in the api search tag, type 'tab' and hit search.
+
+2.  Find the commdns that best relate to handling tabs in a window, such as:
+browser.getCurrentTabId(); --retrieve the current window handles
+browser.getTabIds(); --retrieve a list of all window handles.  You can use these handles to switch between tabs.
+browser.switchTab([windowhandle]) --switch focus to a particular tab/window handle.
+
+3.  Lets use these commands in the 'WebDriverIOUniversity.js' file to better handle test with tabs:
+
+Right after the 'browser.click('#contact-us');' type:
+
+var tabIds = browser.getTabIds(); // Get Id's of tabs that are open
+console.log(tabIds); // Print available tabs
+browser.switchTab(tabIds[1]); //Focus on the choosen tab
+
+Be sure to add at the end of the statement 'browser.close();' to close out all instances and reset all handles 
+from the browser.
+
+Do the same for the second stament in side the describe object, right after the 'browser.click('#login-portal');':
+
+var tabIds = browser.getTabIds();
+console.log(tabIds); // Print available tabs
+browser.switchTab(tabIds[1]);  //Use index 1 because the homepgae is 0
+
+4.  To double check we have the right handeles, we can use chai assertions, such as:
+
+Right after the 'browser.switchTab(tabIds[1]);' type:
+
+var contactTitle = browser.getTitle(); // Create a varible for title to run a assertion against
+console.log(contactTitle);
+expect(contactTitle).to.equal('WebDriver | Contact Us'); //Title assertion
+var url = browser.getUrl(); //Get url
+expect(url).to.include('Contact-Us', 'URL mismtach');//Assert the url contains 'Contact-Us'
+
+and right before the broswer.pause() stament.
+
+Do the same for the second 'it' function, right after 'browser.switchTab(tabIds[1]);' type:
+
+var logintTitle = browser.getTitle(); // Create a varible for title to run a assertion against
+expect(loginTitle).to.equal('WebDriver | Login-Portal'); //Title assertion
+var url = browser.getUrl(); //Get url
+expect(url).to.include('Login-Portal', 'URL mismtach'); //Assert the url contains 'Login-Portal'
