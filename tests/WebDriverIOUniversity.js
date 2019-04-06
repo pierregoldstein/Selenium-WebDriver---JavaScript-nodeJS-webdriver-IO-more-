@@ -18,7 +18,7 @@ describe("Verify webdriveruniveristy links on homepage work correctly", function
         expect(contactTitle).to.equal('WebDriver | Contact Us'); //Title assertion
         var url = browser.getUrl(); //Get url
         expect(url).to.include('Contact-Us', 'URL mismtach'); //Assert the url contain 'contact us'
-        browser.pause(10000);
+        browser.pause(3000);
         browser.close();
     });
 
