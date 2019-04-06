@@ -1,5 +1,4 @@
 Section 16  - Handling Browser Window Tabs
-<<<<<<< HEAD
 
 1.  Navigate to 'webdriver.io' and in the api search tag, type 'tab' and hit search.
 
@@ -43,5 +42,3 @@ var logintTitle = browser.getTitle(); // Create a varible for title to run a ass
 expect(loginTitle).to.equal('WebDriver | Login-Portal'); //Title assertion
 var url = browser.getUrl(); //Get url
 expect(url).to.include('Login-Portal', 'URL mismtach'); //Assert the url contains 'Login-Portal'
-=======
->>>>>>> e2eb6c64801658c1a897ffa062db7ea6d712b46b
