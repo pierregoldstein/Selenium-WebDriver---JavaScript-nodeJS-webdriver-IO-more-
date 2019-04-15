@@ -1,0 +1,52 @@
+Verify elements
+
+1.  'isExisting()' - returns true if at least one element is existing by a given selector.
+Go to 'webdriveruniveristy.com' and find the 'hidden elements' portal.  On the hidden elements portal you 
+will see 3 div containers.  Right click and inspect the page to identify the 3 div containers in the 
+styles-sheet of the page.   Identify '#not-display' and change its display:true.  The click me button will 
+appear on the page.  Do the same for the #visibility-hidden and change the visibility:true.  Another click me 
+button.  Do the same for #zero-opacity and change opacity:100.  The last click me will appear.
+
+After getting familiar with the id's of the page, copy the names in our code being sure to add a # in 
+front to know they are id's.  Copy the id's in each 'it' function in our isExisting.js file located in our 
+tests directory.  Also add the page header, 'h1', no need for # as it is not an id.  We will also test for 
+#no-such-element as a control group for our test.
+
+2.  'isEnabled()' - Return true or false if the selected DOM-element is enabled.
+Go to 'webdriveruniveristy.com'and navigate to the 'dropdowns, checkboxes & radio buttons'.  On that page, 
+there are a series of radio button, some disbaled, we will test those radio buttons.  Use the inspect tool to find the individual elements uysing 
+Ranorex.  We will isolate the orangle dropdown and get the css properties using Ranorex('Selected & disbaled').
+** Hint:  Right clicking on the element form the page, copying the css through Ranorex plugin and using the 
+inspect page with the Ranorex tag  will help you identify css elements on the page **
+
+3.  'isSelected()' - Will return true or false whether or not an <option> or <input> element of type 
+checkbox or radio is currently selected.
+Go to 'webdriveruniveristy.com', repeat thesame excercise as previous but use the 'isSelected()' method.
+
+4.  'isVisibileWithinViewport()' - Return true if the selected DOM-element found by given selector is visible 
+and within the viewport.  
+Go to 'webdriveruniveristy.com', navigate to the 'Hidden Elements' page.  Here we will test the elements on the 
+page using different screen resolutions and is the elements are visible with different resolutions.  Grab the 
+elements we used on a previous excercise of 'isVisible()' method.
+#not-displayed
+#visibility-hidden
+#zero-opacity
+h1
+
+The code structure should be similar to the two previous excercises.
+
+If we need to output the size of the window when running test, we can use 'windowHandleSize()'.
+'windowHandleSize()' - Protocol binding to get or change the size of the browser.
+We can also use 'getViewportSize()'.
+'getViewportSize()' - Get viewport size of the current browser window.
+
+5.  We are gonna modify code from a earlier test, 'contactUsTest.js' by testing positive and negative scenarios.
+To help us we will be using 'getText()' method.
+'getText()' - Get the text content from a DOM-element. Make sure the element you want to request the text from 
+is interactable otherwise you will get an empty string as return value. If the element is disabled or not 
+visible and you still want to receive the text content use getHTML as a workaround.
+
+Go to 'Contact Us' page on 'webdriveruniveristy.com' and create a successful and unscessful submission.  Copy 
+the element tags of both outputs from the responses using the inspect tool and Ranorex.
+
+
