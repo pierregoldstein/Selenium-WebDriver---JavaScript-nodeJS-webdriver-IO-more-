@@ -50,3 +50,54 @@ Go to 'Contact Us' page on 'webdriveruniveristy.com' and create a successful and
 the element tags of both outputs from the responses using the inspect tool and Ranorex.
 
 
+6. 'waitForText()' - Wait for an element (selected by css selector) for the provided amount of milliseconds to 
+have text/content. If multiple elements get queryied by given selector, it returns true (or false if reverse 
+flag is set) if at least one element has text/content.
+
+Navigate to 'webdriveruniveristy.com' and click on the the 'Accordian Items and Text Appear' link.  You'll see 
+a page with the 'loading page' at the footer of the page.  It will change to 'loading complete'.  Lets us the 
+new method to test this async method.
+
+'(selector).getText()' - Get the text content from a DOM-element. Make sure the element you want to request the 
+text from is interactable otherwise you will get an empty string as return value. If the element is disabled or 
+not visible and you still want to receive the text content use getHTML as a workaround.
+
+'$' - The $ command is a short way to call the findElement command in order to fetch a single element on the 
+page. It returns an object that with an extended prototype to call action commands without passing in a 
+selector. However if you still pass in a selector it will look for that element first and call the action on 
+that element.
+
+Using the wdio testrunner this command is a global variable else it will be located on the browser object 
+instead.
+
+You can chain $ or $$ together in order to walk down the DOM tree. For more information on how to select 
+specific elements, see Selectors.
+
+exp: $(selector)
+
+7. 'waitForVisible()' - Wait for an element (selected by css selector) for the provided amount of milliseconds 
+to be (in)visible. If multiple elements get queryied by given selector, it returns true (or false if reverse 
+flag is set) if at least one element is visible.
+
+This function checks for visibility using window.getComputedStyle. An element will be considered invisible if 
+its visibility is ‘hidden’, its display is ‘none’, its opacity is 0 or its x/y coordinates are not within the 
+viewport.
+
+Navigate to 'webdriveruniveristy.com' and click on the 'ajax loader' link to test this function.  Use Ranorex 
+to locate the p element in the page as it conatin the phrase "CLICK ME".  We can now test the waitForExist and 
+waitForVisible on the Ajax loader and make sure that nothing is visible before a certain amount of time.
+
+8.  'waitUntil()' - This wait command is your universal weapon if you want to wait on something. It expects a 
+condition and waits until that condition is fulfilled with a truthy value. If you use the WDIO testrunner the 
+commands within the condition are getting executed synchronously like in your test.
+
+Go back to the 'Ajax Loader' page on 'webdriveruniveristy.com' We are going to know text when the 'loading 
+complete' is displayed on the page.
+
+9.  'waitForValue(selector[,ms][,reverse]).then(callback)' - Wait for an element (selected by css selector) 
+for the provided amount of milliseconds to have a value. If multiple elements get queryied by given selector, 
+it returns true (or false if reverse flag is set) if at least one element has a value.
+
+Go to the previous excercise web location and Verify text exists within the loading div container.
+
+End of 17
