@@ -1,5 +1,21 @@
 var request = require('sync-request'); //Load the sync request library
 
+browser.addCommand("submitDataViaContactUsForm", function(firstName, lastName, emailAddress, comments){
+    if(firstName){
+        browser.setValue("[name='first_name']", firstName);
+    }
+    if(lastName){
+        browser.setValue("[name='last_name']", lastName);
+    }
+    if(emailAddress){
+        browser.setValue("[name='email']", emailAddress);
+    }
+    if(comments){
+        browser.setValue("[name='message']", comments);
+    }
+    browser.click("[type='submit']");
+})
+
 beforeEach(function () {
     browser.url('/Contact-Us/contactus.html');
 });
@@ -15,11 +31,14 @@ describe('Test Contact Us form on Webdriveruniveristy.com', function () {
     // contacUsDetails.forEach(function (contacUsDetails) {
     contacUsDetails.slice(0,5).forEach(function (contacUsDetails){ //Using the slice method to limit the number of request because the file is ginormous!!!
         it.only('Should be able to submit a sucessful submission via contact us form', function (done) { //it.only is used just to run this one test
-            browser.setValue("[name='first_name']", 'Pierre');
-            browser.setValue("[name='last_name']", 'Goldstein');
-            browser.setValue("[name='email']", contacUsDetails.email); //Updated info with parsed json data for email
-            browser.setValue("[name='message']", contacUsDetails.body); //Updated info with parsed json data for body
-            browser.click("[type='submit']");
+            
+            browser.submitDataViaContactUsForm(contacUsDetails.name, contacUsDetails.name, contacUsDetails.email, contacUsDetails.body)
+            //null can be used to pass in as a paramter if you need to pass in a blank field
+            // browser.setValue("[name='first_name']", 'Pierre');
+            // browser.setValue("[name='last_name']", 'Goldstein');
+            // browser.setValue("[name='email']", contacUsDetails.email); //Updated info with parsed json data for email
+            // browser.setValue("[name='message']", contacUsDetails.body); //Updated info with parsed json data for body
+            // browser.click("[type='submit']");
 
             var sucessfulContactConfirmation = browser.isExisting("#contact_reply h1");
             expect(sucessfulContactConfirmation, "Sucessful submission Message does not exist").to.be.true;

@@ -1,0 +1,24 @@
+'browser.addCommand(commandName, customMethod, overwrite)' - Add custom command to client/browser instance.
+
+Param           Type            Details
+---------------------------------------
+commandName     String          name of your custom command
+customeMethod   function        your custom customMethod
+overwrite       Boolean         if set to true you can overwrite existing commands
+
+Example
+-------
+addCommandAsync.js
+
+browser.addCommand('getUrlAndTitle', function async (customVar){
+    return this.var.url.then(function(urlResult){
+        return this.getTitle().then(function(titleResult){
+            console.log(customVar);
+            return {url: urlResult.value, title: titleResult}
+        })
+    })
+})
+
+1.  We will use this method to help us use the 'dry' method to our contactUsTest.js so we dont not need to 
+duplicate unecessary code.  We can simply our test using the 'addCommand', by adding the first name, last name, 
+email and message to variables instead of typing them out for every test.
