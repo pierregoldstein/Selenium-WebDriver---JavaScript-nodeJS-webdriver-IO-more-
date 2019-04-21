@@ -1,0 +1,13 @@
+1.  Go to npm.org and look up the info to install 'sync-request',  'sync-request' allows you to hit an endpoint 
+and load data into your request, e.g: adding json data to our test cases.
+
+'sync-request' - Make synchronous web requests with cross-platform support.
+
+npm install --save-dev syn-request, is the command to install
+
+After installing we need to update some variable for syn request and get ready to start using json data in our 
+contactUsTest.js file.
+
+After setting up data change the enail and body datat with the newly parsed json datat using a forEach loop 
+and making sure that we only run one test, we will use it.only.
+
