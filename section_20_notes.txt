@@ -1,0 +1,15 @@
+'browser.execute(script, arguments)' - Inject a snippet of JavaScript into the page for execution in the context of 
+the currently selected frame. The executed script is assumed to be synchronous and the result of evaluating the
+script is returned to the client.
+
+The script argument defines the script to execute in the form of a function body. The value returned by that 
+function will be returned to the client. The function will be invoked with the provided args array and the 
+values may be accessed via the arguments object in the order specified.
+
+Arguments may be any JSON-primitive, array, or JSON object. JSON objects that define a WebElement reference 
+will be converted to the corresponding DOM element. Likewise, any WebElements in the script result will be 
+returned to the client as WebElement JSON objects.
+
+1.  We can also execute commands or scripts inline with established pages to test functionality, e.g:  Playing 
+or pausing a video on a webpage by using console in developers tools of your browser.  'execute()'  will allow 
+us to add these inline with our test.
