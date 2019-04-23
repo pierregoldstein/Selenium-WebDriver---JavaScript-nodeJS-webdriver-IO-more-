@@ -1,0 +1,22 @@
+Page Object Model(POM)
+
+1. POM can be broken up into three phases:
+
+Phase 1
+-------
+Centralizing Selectors
+Improving our Existing Commands 
+
+Phase 2
+-------
+
+Creating Seperate POM Classes
+Link Test with POM Classes
+Directly call POM Commands via Tests
+
+Phase 3
+-------
+
+Centralizing all Selectors & Commands inside the POM Class(further Abstraction)
+Simplifying Tests by applying all concepts from Phase 1, 2 & 3
+

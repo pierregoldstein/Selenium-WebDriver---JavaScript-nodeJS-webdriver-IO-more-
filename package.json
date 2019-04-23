@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "selenium-standalone": "^6.15.3",
+    "sync-request": "^6.1.0",
     "wdio-mocha-framework": "^0.6.3",
     "wdio-selenium-standalone-service": "0.0.10",
     "webdriverio": "^4.13.2"
