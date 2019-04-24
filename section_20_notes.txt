@@ -13,3 +13,12 @@ returned to the client as WebElement JSON objects.
 1.  We can also execute commands or scripts inline with established pages to test functionality, e.g:  Playing 
 or pausing a video on a webpage by using console in developers tools of your browser.  'execute()'  will allow 
 us to add these inline with our test.
+
+2. Creating Seperate Classes - Create a new folder in the root directory and call it 'pageObjects'.  To centralize our 
+resourses, we will create a class file in the new folder and move our selectors and other reusuable resources in this file using 'get' method.
+After creating the file with get methods, we will update our 'wdio.conf.js' file.  In the 'specs' object modify the path to read './tests/*.js' and 
+in the 'exclude' object add the new path to './pageObjects' folder with files, 'pageObjects/*_Page.js'.  Go to the new file we creatd, 'ContactUs_Page.js'
+and at the end add 'module.export = new ContactUs_Page();' so we can use this file in our project.  In the 'contactUsTest.js' file, remove unecessary 
+selectors and add 'var ContactUs_Page = require("./pageObjects/ContactUs_Page.js");' at the top of the file.  On the method located inside the decribe 
+block on the 'contactUsTest.js' file, we will remove the 'browser.setValue()' and replace it with 'ContactUs_Page.firstname.setValue()'.
+
