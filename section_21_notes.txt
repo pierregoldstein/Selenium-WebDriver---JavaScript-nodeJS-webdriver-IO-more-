@@ -20,3 +20,14 @@ Phase 3
 Centralizing all Selectors & Commands inside the POM Class(further Abstraction)
 Simplifying Tests by applying all concepts from Phase 1, 2 & 3
 
+--------------------------------------------------------------------------------
+
+Phase 2 - Creating Seperate Classes - Create a new folder in the root directory and call it 'pageObjects'.  To centralize our 
+resourses, we will create a class file in the new folder and move our selectors and other reusuable resources in this file using 'get' method.
+After creating the file with get methods, we will update our 'wdio.conf.js' file.  In the 'specs' object modify the path to read './tests/*.js' and 
+in the 'exclude' object add the new path to './pageObjects' folder with files, 'pageObjects/*_Page.js'.  Go to the new file we creatd, 'ContactUs_Page.js'
+and at the end add 'module.export = new ContactUs_Page();' so we can use this file in our project.  In the 'contactUsTest.js' file, remove unecessary 
+selectors and add 'var ContactUs_Page = require("./pageObjects/ContactUs_Page.js");' at the top of the file.  On the method located inside the decribe 
+block on the 'contactUsTest.js' file, we will remove the 'browser.setValue()' and replace it with 'ContactUs_Page.firstname.setValue()'.
+
+Phase 3 - In the 3rd pahse, we cetralize all selectors and commnds inside the POM class and simply the test by applying all concepts.
