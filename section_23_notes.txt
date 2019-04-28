@@ -1,0 +1,15 @@
+Free Up Space - Deleting Files and Folders
+
+Go into the 'wdio.conf.js' and use one the the hooks called 'beforeSession' and uncomment it.
+Add the folder directories names and the 'del' library to git rid of the folders upon execution. E.g:
+beforeSession: function (config, capabilities, specs) {
+        const del = require('del');
+        del(['allure-reports','erroShots','reports']);
+    },
+
+In git bash run 'npm install del --save-dev'
+
+run 'npm test -- --spec=tests/ajaxclicktest.js'
+
+You'll notice the folders named in the hook we confirgured in wdio file are deleted before execution then 
+recreated after the test.

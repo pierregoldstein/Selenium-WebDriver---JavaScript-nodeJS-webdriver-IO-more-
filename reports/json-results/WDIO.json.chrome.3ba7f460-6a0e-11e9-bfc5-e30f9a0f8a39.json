@@ -1,0 +1,1 @@
+{"start":"2019-04-28T23:34:29.311Z","end":"2019-04-28T23:34:57.431Z","capabilities":{"maxInstances":5,"browserName":"chrome"},"host":"127.0.0.1","port":4444,"baseUrl":"http://www.webdriveruniversity.com/","framework":"mocha","mochaOpts":{"timeout":10000,"ui":"bdd"},"suites":[]}
