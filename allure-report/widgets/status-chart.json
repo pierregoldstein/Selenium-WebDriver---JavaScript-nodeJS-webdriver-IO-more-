@@ -1,0 +1,41 @@
+[ {
+  "uid" : "5a271e61b75a365c",
+  "name" : "Attempt to click the button asap",
+  "time" : {
+    "start" : 1556492178725,
+    "stop" : 1556492183502,
+    "duration" : 4777
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "49adc47f28e9f9b4",
+  "name" : "Attempt to click the button after 7 seconds",
+  "time" : {
+    "start" : 1556492183503,
+    "stop" : 1556492198385,
+    "duration" : 14882
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6017a9685db70015",
+  "name" : "Should not be able to submit a successful submission via contact us form as all fields are required",
+  "time" : {
+    "start" : 1556492825999,
+    "stop" : 1556492827025,
+    "duration" : 1026
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a0f20205102b814c",
+  "name" : "Should be able to submit a successful submission via contact us form",
+  "time" : {
+    "start" : 1556492811900,
+    "stop" : 1556492822916,
+    "duration" : 11016
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

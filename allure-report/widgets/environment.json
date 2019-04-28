@@ -1,0 +1,7 @@
+[ {
+  "values" : [ "{\"maxInstances\":5,\"browserName\":\"chrome\"}" ],
+  "name" : "capabilities"
+}, {
+  "values" : [ "[\"D:\\\\Projects\\\\Selenium_WebDriver-JavaScript_nodeJS_webdriverIO_and_more\\\\WebDriverIOFramework\\\\tests\\\\ajaxclicktest.js\"]" ],
+  "name" : "spec files"
+} ]

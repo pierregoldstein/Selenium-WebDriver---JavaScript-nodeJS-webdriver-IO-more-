@@ -12,7 +12,7 @@ describe('Test Contact Us form WebdriverUni', function() {
   	// ContactUs_Page.setEmailAddress('joe_blogs123@outlook.com');
   	// ContactUs_Page.setComments('How are you?');
   	// ContactUs_Page.clickSubmitButton();
-		// ContactUs_Page.confirmSuccessfulSubmission();
+	// ContactUs_Page.confirmSuccessfulSubmission();
 		
 		ContactUs_Page.submitAllInformationViaContactUsForm('joe','Blogs','joe_blogs123@outlook.com','How are you?');
    	});
@@ -23,7 +23,7 @@ describe('Test Contact Us form WebdriverUni', function() {
   	// ContactUs_Page.setLastName('Woods');
   	// ContactUs_Page.setEmailAddress('mike_woods@mail.com');
   	// ContactUs_Page.clickSubmitButton();
-		// ContactUs_Page.confirmUnsuccessfulSubmission();
+	// ContactUs_Page.confirmUnsuccessfulSubmission();
 
 		ContactUs_Page.submitAllInformationViaContactUsForm('Mike','Woods','mike_woods@mail.com',null);
 		
@@ -34,16 +34,16 @@ describe('Test Contact Us form WebdriverUni', function() {
   	// ContactUs_Page.setFirstName('Sarah');
   	// ContactUs_Page.setEmailAddress('sarah_woods@mail.com');
   	// ContactUs_Page.clickSubmitButton();
-		// ContactUs_Page.confirmUnsuccessfulSubmission();
+	// ContactUs_Page.confirmUnsuccessfulSubmission();
 
 		ContactUs_Page.submitAllInformationViaContactUsForm('Sarah',null,'sarah_woods@mail.com',null);
     });
 
   it('Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
-  	ContactUs_Page.setLastName('Jomes');
-  	ContactUs_Page.setEmailAddress('sarah_Jomes@mail.com');
-  	ContactUs_Page.clickSubmitButton();
-		ContactUs_Page.confirmUnsuccessfulSubmission();
+    // ContactUs_Page.setLastName('Jomes');
+  	// ContactUs_Page.setEmailAddress('sarah_Jomes@mail.com');
+  	// ContactUs_Page.clickSubmitButton();
+		// ContactUs_Page.confirmUnsuccessfulSubmission();
 		ContactUs_Page.submitAllInformationViaContactUsForm(null,'Jomes','sarah_Jomes@mail.com',null);
     });
 });

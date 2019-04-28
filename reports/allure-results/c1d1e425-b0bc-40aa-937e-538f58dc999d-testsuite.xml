@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1556492178723' stop='1556492198386'>
+    <name>Test that the button is clickable ince the Ajax loader completes loading</name>
+    <title>Test that the button is clickable ince the Ajax loader completes loading</title>
+    <test-cases>
+        <test-case start='1556492178725' status='broken' stop='1556492183502'>
+            <name>Attempt to click the button asap</name>
+            <title>Attempt to click the button asap</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["D:\\Projects\\Selenium_WebDriver-JavaScript_nodeJS_webdriverIO_and_more\\WebDriverIOFramework\\tests\\ajaxclicktest.js"]'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='141252c5-61af-4258-bb6c-7dfc952a17fc-attachment.png' type='image/png' size='16111'/>
+            </attachments>
+            <failure>
+                <message>An element could not be located on the page using the given search parameters.</message>
+                <stack-trace>Error: An element could not be located on the page using the given search parameters.
+                    at click("#button1555") -     at D:\Projects\Selenium_WebDriver-JavaScript_nodeJS_webdriverIO_and_more\WebdriverIOFramework\node_modules\wdio-sync\build\at element("#button1555") - D:\Projects\Selenium_WebDriver-JavaScript_nodeJS_webdriverIO_and_more\WebdriverIOFramework\node_modules\webdriverio\build\lib\commands\click.js:12:17</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1556492183503' status='passed' stop='1556492198385'>
+            <name>Attempt to click the button after 7 seconds</name>
+            <title>Attempt to click the button after 7 seconds</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["D:\\Projects\\Selenium_WebDriver-JavaScript_nodeJS_webdriverIO_and_more\\WebDriverIOFramework\\tests\\ajaxclicktest.js"]'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

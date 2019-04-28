@@ -1,0 +1,61 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Test that the button is clickable ince the Ajax loader completes loading",
+    "children" : [ {
+      "name" : "Attempt to click the button asap",
+      "uid" : "5a271e61b75a365c",
+      "parentUid" : "5d50b99f58fb3145714505fded330552",
+      "status" : "broken",
+      "time" : {
+        "start" : 1556492178725,
+        "stop" : 1556492183502,
+        "duration" : 4777
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Attempt to click the button after 7 seconds",
+      "uid" : "49adc47f28e9f9b4",
+      "parentUid" : "5d50b99f58fb3145714505fded330552",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492183503,
+        "stop" : 1556492198385,
+        "duration" : 14882
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "5d50b99f58fb3145714505fded330552"
+  }, {
+    "name" : "Test Contact Us form WebdriverUni",
+    "children" : [ {
+      "name" : "Should be able to submit a successful submission via contact us form",
+      "uid" : "a0f20205102b814c",
+      "parentUid" : "7c568fb61e6918b147b38c6921809a37",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492811900,
+        "stop" : 1556492822916,
+        "duration" : 11016
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Should not be able to submit a successful submission via contact us form as all fields are required",
+      "uid" : "6017a9685db70015",
+      "parentUid" : "7c568fb61e6918b147b38c6921809a37",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492825999,
+        "stop" : 1556492827025,
+        "duration" : 1026
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "7c568fb61e6918b147b38c6921809a37"
+  } ]
+}

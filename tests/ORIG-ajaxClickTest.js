@@ -1,11 +1,3 @@
-/*
-
-1. Browse to webdriver.io and search the pause command, become fimiliar with it.
-
-2  Navigate to webdriveruniversity.com amd
-
-*/
-
 describe('Test that the button is clickable ince the Ajax loader completes loading', function() {
 	it('Attempt to click the button asap', function(done) {
 		browser.url('/Ajax-Loader/index.html');

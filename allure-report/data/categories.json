@@ -1,0 +1,25 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "An element could not be located on the page using the given search parameters.",
+      "children" : [ {
+        "name" : "Attempt to click the button asap",
+        "uid" : "5a271e61b75a365c",
+        "parentUid" : "d53bb646b3c97098681e1db1a25832ed",
+        "status" : "broken",
+        "time" : {
+          "start" : 1556492178725,
+          "stop" : 1556492183502,
+          "duration" : 4777
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "d53bb646b3c97098681e1db1a25832ed"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

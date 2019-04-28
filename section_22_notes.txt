@@ -1,0 +1,95 @@
+Advanced Reporting
+
+1.  JUnit Testing - JUnit is a simple framework to write repeatable tests. It is an instance of the xUnit 
+architecture for unit testing frameworks.
+
+Got into 'wdio.conf.js' file and look for the object called 'reporters' and uncomment it.  Add the string
+'junit' after 'dot' then also add another object called 'reporterOptions', this object will be used to our
+output directory.  E.g.:
+
+reporters: ['dot', 'junit'],
+
+    reporterOptions:{
+        junit:{
+            outputDir: './reports/junit-results/'
+        }
+    },
+
+Then open git bash at the project root directory and type 'npm install wdio-junit-reporter --save -dev' to 
+install junit.
+
+After installing, run the command 'npm test -- --spec=tests/contactUsTest.js'.
+
+Upon completion of the test, the console will output 'Wrote xunit report "WDIO.xunit.chrome.0-0.xml" to 
+[./reports/junit-results/].".  Also, a new folder will be created in the root directory called results.  
+In the results there should be another folder call 'junit' and in that folder will be the junit test.
+
+2. JSON reporting - JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for 
+humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the 
+JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is 
+completely language independent but uses conventions that are familiar to programmers of the C-family of 
+languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an 
+ideal data-interchange language.
+
+Repeat the same steps as in the previous (junit), wdio.conf.js -> add 'json' to the 'reporters' object.
+Add a 'json' object to the 'reporterOptions' object using similar format but instead use 
+'./reports/json-results/'.
+
+Open git bash at the project root directory and type 'npm install wdio-json-reporter --save -dev' to 
+install json report packages.
+
+After installing, run the command 'npm test -- --spec=tests/contactUsTest.js'.
+
+
+3. Allure reporting - Allure Framework is a flexible lightweight multi-language test report tool that not only
+ shows a very concise representation of what have been tested in a neat web report form, but allows everyone 
+ participating in the development process to extract maximum of useful information from everyday execution of 
+ tests.
+
+Just like the previous execerise add 'allure to the reporting object  and a path to the output directory, 
+E.g:
+
+reporters: ['dot', 'junit', 'json', 'allure'],
+
+    reporterOptions: {
+        junit: {
+            outputDir: './reports/junit-results/'
+        },
+        json: {
+            outputDir: './reports/json-results/'
+        },
+        allure: {
+            outputDir: './reports/allure-results/',
+            //extra parameters can be found on webdriver.io and searching reporterOptions
+            disableWebdriverStepsReporting: true, 
+            disableWebdriverScreenshotsReporting: false,
+            useCucumberStepReporter: false
+        },
+    },
+
+Open git bash at the project root directory and type 'npm install wdio-allure-reporter --save -dev' to 
+install allure report packages and 'npm install -g allure commandline --save-dev'.
+
+After installing, run the command 'npm test -- --spec=tests/ajaxckicktest.js'.
+
+To generate webbased reports with allure, run 'allure generate /path/to/report/folder'.
+
+Once the report is generated, run 'allure open' and an instance of jetty will open a graphical representation 
+of allure reports.
+
+----------------
+Attaching images
+----------------
+
+Open the 'wdio.conf.js' file and uncomment the after block.  Add this code to save error images:
+after: function (result, capabilities, specs) {
+        var name = 'ERROR-chrome-'+Date.now();
+        browser.saveScreenshot('./errorShots/'+name+'.png');
+    },
+
+Delete the 'errorShots' and 'reports' folder.
+
+Run 'npm test -- --spec=tests/ajaxckicktest.js', then run 'allure generate /path/to/reports/folder' && 
+'allure open'
+
+Observe the saved screen shot of the error in allure reports webpage.

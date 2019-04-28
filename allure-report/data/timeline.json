@@ -1,0 +1,57 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "0-0",
+    "children" : [ {
+      "name" : "Attempt to click the button asap",
+      "uid" : "5a271e61b75a365c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1556492178725,
+        "stop" : 1556492183502,
+        "duration" : 4777
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Attempt to click the button after 7 seconds",
+      "uid" : "49adc47f28e9f9b4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492183503,
+        "stop" : 1556492198385,
+        "duration" : 14882
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Should not be able to submit a successful submission via contact us form as all fields are required",
+      "uid" : "6017a9685db70015",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492825999,
+        "stop" : 1556492827025,
+        "duration" : 1026
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Should be able to submit a successful submission via contact us form",
+      "uid" : "a0f20205102b814c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1556492811900,
+        "stop" : 1556492822916,
+        "duration" : 11016
+      },
+      "flaky" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "516fe00eea05ad99e936fa729b55eff4"
+  } ]
+}

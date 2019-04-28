@@ -1,12 +1,13 @@
+var baseUrl;
 
-var baseURL = 'http://www.webdriveruniversity.com/';
-var timeout = process.env.DEBUG ? 99999999 : 10000; // Create a timeout varibale that if its set to true that it will run for 99999999 else it will default to 10 seconds
+if(process.env.SERVER === 'prod') {
+	baseUrl = 'https://www.google.com';
+	} else {
+		baseUrl= "http://www.webdriveruniversity.com";
+	}
 
-// if(process.env.SERVER === 'prod'){
-//     baseURL = 'https://google.com';
-// } else {
-//     baseURL = 'http://www.webdriveruniveristy.com';
-// }
+    var timeout = process.env.DEBUG ? 99999999 : 10000;
+
 exports.config = {
     
     //
@@ -23,7 +24,6 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
         './pageObjects/*_Page.js'
     ],
     //
@@ -87,10 +87,10 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: baseURL,
+    baseUrl: baseUrl,
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 30000,
+    waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -121,7 +121,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+     services: ['selenium-standalone'],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -133,7 +133,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters: ['dot', 'junit', 'json', 'allure'],
+    reporters: ['dot', 'junit', 'json'],
 
     reporterOptions: {
         junit: {
@@ -142,19 +142,13 @@ exports.config = {
         json: {
             outputDir: './reports/json-results/'
         },
-        allure: {
-            outputDir: './reports/allure-results/',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: false,
-            useCucumberStepReporter: false
-        },
     },
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: timeout // Create a timeout varibale that if its set to true that it will run for 99999999 else it will default to 10 seconds
+        timeout: timeout
     },
     //
     // =====
@@ -186,10 +180,10 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
-        expect = require('chai').expect;
-        should = require('chai').should();
-    },
+     before: function (capabilities, specs) {
+         expect = require('chai').expect;
+         should = require('chai').should();
+     },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -251,10 +245,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    after: function (result, capabilities, specs) {
-        var name = 'ERROR-chrome-'+Date.now();
-        browser.saveScreenshot('./errorShots/'+name+'.png');
-    },
+    // after: function (result, capabilities, specs) {
+    // },
     /**
      * Gets executed right after terminating the webdriver session.
      * @param {Object} config wdio configuration object

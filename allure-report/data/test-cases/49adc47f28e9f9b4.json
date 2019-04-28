@@ -1,0 +1,57 @@
+{
+  "uid" : "49adc47f28e9f9b4",
+  "name" : "Attempt to click the button after 7 seconds",
+  "fullName" : "Test that the button is clickable ince the Ajax loader completes loading.Attempt to click the button after 7 seconds",
+  "historyId" : "4bcc708f474af9234599a4f31ec837d6",
+  "time" : {
+    "start" : 1556492183503,
+    "stop" : 1556492198385,
+    "duration" : 14882
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Test that the button is clickable ince the Ajax loader completes loading"
+  }, {
+    "name" : "testClass",
+    "value" : "Test that the button is clickable ince the Ajax loader completes loading"
+  }, {
+    "name" : "testMethod",
+    "value" : "Attempt to click the button after 7 seconds"
+  }, {
+    "name" : "package",
+    "value" : "Test that the button is clickable ince the Ajax loader completes loading"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "49adc47f28e9f9b4.json",
+  "parameterValues" : [ "chrome" ]
+}
