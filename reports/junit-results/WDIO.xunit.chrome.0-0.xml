@@ -1,2 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites/>
+<testsuites>
+  <testsuite name="Test_Contact_Us_form_WebdriverUni" timestamp="2019-05-01T08:34:00" time="1.269" tests="4" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="a60c460546b68a26264b91915884208e"/>
+      <property name="suiteName" value="Test Contact Us form WebdriverUni"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value=".\tests\contactUsTest.js"/>
+    </properties>
+    <testcase classname="chrome.Test_Contact_Us_form_WebdriverUni" name="Should_be_able_to_submit_a_successful_submission_via_contact_us_form" time="0.936">
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/url - {"url":"http://www.webdriveruniversity.com/Contact-Us/contactus.html"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element - {"using":"name","value":"first_name"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":{"ELEMENT":"0.02482434673776268-1"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.02482434673776268-1/clear - {}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.02482434673776268-1/value - {"value":["j","o","e"],"text":"joe"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+]]>
+      </system-out>
+    </testcase>
+    <testcase classname="chrome.Test_Contact_Us_form_WebdriverUni" name="Should_not_be_able_to_submit_a_successful_submission_via_contact_us_form_as_all_fields_are_required" time="0.118">
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/url - {"url":"http://www.webdriveruniversity.com/Contact-Us/contactus.html"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element - {"using":"name","value":"first_name"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":{"ELEMENT":"0.11637209512931146-1"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.11637209512931146-1/clear - {}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.11637209512931146-1/value - {"value":["M","i","k","e"],"text":"Mike"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+]]>
+      </system-out>
+    </testcase>
+    <testcase classname="chrome.Test_Contact_Us_form_WebdriverUni" name="Should_not_be_able_to_submit_a_successful_submission_via_contact_us_form_as_all_fields_are_required" time="0.111">
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/url - {"url":"http://www.webdriveruniversity.com/Contact-Us/contactus.html"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element - {"using":"name","value":"first_name"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":{"ELEMENT":"0.14154643221449592-1"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.14154643221449592-1/clear - {}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.14154643221449592-1/value - {"value":["S","a","r","a","h"],"text":"Sarah"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+]]>
+      </system-out>
+    </testcase>
+    <testcase classname="chrome.Test_Contact_Us_form_WebdriverUni" name="Should_not_be_able_to_submit_a_successful_submission_via_contact_us_form_as_all_fields_are_required" time="0.101">
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/url - {"url":"http://www.webdriveruniversity.com/Contact-Us/contactus.html"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element - {"using":"name","value":"last_name"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":{"ELEMENT":"0.09213383644616502-1"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.09213383644616502-1/clear - {}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/element/0.09213383644616502-1/value - {"value":["J","o","m","e","s"],"text":"Jomes"}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+COMMAND: GET http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1/screenshot - {}
+RESULT: null
+COMMAND: DELETE http://127.0.0.1:4444/wd/hub/session/ab4929b8ed761b002b42e0add6e607b1 - {}
+RESULT: {"sessionId":"ab4929b8ed761b002b42e0add6e607b1","status":0,"value":null}
+]]>
+      </system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
