@@ -1,0 +1,27 @@
+Jenkins Introduction
+
+Jenkins is a tool that can automate your project.  If you wanted to schedule test to execute at different 
+times, you can.  Jenkin creates builds and automates those builds when scheduled.  Jenkins allows you to 
+execute our framework on its own.
+
+Go to  jenkins.io and download 'generic java war file'.  Save it in an acessible location and open gitbash 
+from that location.  Once open run 'java -jar jenkins.war --httpPort=5555' 
+***Note - --httpPort=xxxx is used to specify a port because by default jkenkins uses port 8080 ***
+Installation will be complete when you see 'jenkins is fully up and running', after the installation, open 
+your browser and naviagte to http://localhost:5555.
+When you navigate to the page, it will ask you for a password and give you a location tp find the password.  
+Copy and paste the password from that location, E.g: C:\Users\Pierre\.jenkins\secrets\initialAdminPassword
+Once in the installation page click 'installed suggested plug-ins'.  Once files are installed it will take you 
+to 'Create First Admin User'.  Fill in the info accordingly.  Click 'save and continue; and then confirm the
+url and port.  The next time you run Jenkins after a shutdown, run 'java -jar jenkins.war' as you do not a port
+because that was setup om the installation. Upon startup, type inthe user name and pasword that you created.
+
+
+Once logged into jenkins homepage, go to 'manage jenkins' then 'manage plugins' and finally click on the 
+'available' tab, install nodejs, html publisher & post build-task without restart.
+
+Once files are installed, click 'manage jenkins' then 'global tool configuration'. Click add nodejs, give it a name and in 
+'Global npm packages to install' type 'bower@~1.8.0 grunt-cli@~1.2.0'. Click apply and save.
+
+Finally we will click 'configure system'. go to 'global properties' and click 'enviromental variables'.  Then click add, in the 
+Name box type in 'PATH" and Value '$PATH:C:/Program Files/nodejs/node_modules/npm/bin'. Click apply and save.
