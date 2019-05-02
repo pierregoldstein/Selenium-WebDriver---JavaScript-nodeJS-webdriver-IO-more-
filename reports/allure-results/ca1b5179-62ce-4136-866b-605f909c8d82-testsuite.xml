@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1556835062539' stop='1556835070087'>
+    <name>Verify webdriveruniveristy links on homepage work correctly</name>
+    <title>Verify webdriveruniveristy links on homepage work correctly</title>
+    <test-cases>
+        <test-case start='1556835062539' status='passed' stop='1556835068719'>
+            <name>check that the Contact us button opens the Contact Us page</name>
+            <title>check that the Contact us button opens the Contact Us page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-14'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["C:\\Users\\pgoldstein\\Desktop\\Projects\\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\\tests\\WebDriverIOUniversity.js"]'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1556835068720' status='broken' stop='1556835070087'>
+            <name>Check that the Login button opens the Login Portal page</name>
+            <title>Check that the Login button opens the Login Portal page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-14'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["C:\\Users\\pgoldstein\\Desktop\\Projects\\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\\tests\\WebDriverIOUniversity.js"]'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>loginTitle is not defined</message>
+                <stack-trace>ReferenceError: loginTitle is not defined
+                    at Context.&lt;anonymous> (C:\Users\pgoldstein\Desktop\Projects\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\tests\WebDriverIOUniversity.js:34:16)
+                    at C:\Users\pgoldstein\Desktop\Projects\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\node_modules\wdio-sync\build\index.js:590:26
+                    at new Promise (&lt;anonymous>)
+                    at new F (C:\Users\pgoldstein\Desktop\Projects\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\node_modules\core-js\library\modules\_export.js:36:28)
+                    at Context.executeSync (C:\Users\pgoldstein\Desktop\Projects\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\node_modules\wdio-sync\build\index.js:588:12)
+                    at C:\Users\pgoldstein\Desktop\Projects\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\node_modules\wdio-sync\build\index.js:759:42</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
