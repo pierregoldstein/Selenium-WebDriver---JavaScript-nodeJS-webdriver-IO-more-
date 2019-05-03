@@ -1,0 +1,25 @@
+Generating Allure reports
+
+Spin up jenkins, 'java -jar jenkins.war --httpPort=5555', and click on cinfugre for mthe jenkins homepage.
+Scroll all the way down to the 'Post-build Actions' and in the dropdown select 'post-build tasks'.
+In the script section, put the path of the project, 1 directory before the root directory of our project
+and write a statement that will create an allure reports folder if one does not exist, like so:
+
+cd C:/Users/pgoldstein/Desktop/Projects
+
+if[ ! -d C:/Users/pgoldstein/Desktop/Projects/Allure_Reports]; then ***Mac Way***
+  mkdir Allure_Reports;
+fi
+
+IF exist C:/Users/pgoldstein/Desktop/Projects/Allure_Reports (echo Folder Allure_Reports already exist ) ELSE (mkdir Allure_Reports);***Windows way***
+
+We also need to write a script that will copy the allure reports from our project to the new directory.
+Click on 'Add another task' then type in the new script box: 
+
+cd C:/Users/pgoldstein/Desktop/Projects/Allure_Reports
+
+cp -R C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-/reports C:/Users/pgoldstein/Desktop/Projects/Allure_Reports/${BUILD_NUMBER} ***Mac way***
+cp -R C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-/reports C:/Users/pgoldstein/Desktop/Projects/Allure_Reports/%BUILD_NUMBER% ***Windows way***
+
+To genarte the allure reports in jenkins, from the homepage of jenkins, click configure -> post build actions -> add another task, then type:
+'allure generate C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-/reports/allure-results --clean'
