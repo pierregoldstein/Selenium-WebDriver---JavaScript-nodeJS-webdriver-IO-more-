@@ -23,3 +23,43 @@ cp -R C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJ
 
 To genarte the allure reports in jenkins, from the homepage of jenkins, click configure -> post build actions -> add another task, then type:
 'allure generate C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-/reports/allure-results --clean'
+
+We also need to pulbish our reprts into an html file.  Lets go click configure -> post build actions -> publish html reports.  In our 'HTML directory to archive' put
+'C:/Users/pgoldstein/Desktop/Projects/Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-/node_modules/.bin/allure-report'.  In 'index pages' put 'index.html' and
+in 'report title' put 'HTML reports'.
+
+One more thing to do to help generate the reports in jenkins is by hgoin gto the homepage of jenkins and click 'manage jenkins' -> 'script console' and type:
+
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';")
+
+System.setProperty("jenkins.model.DirectoryBrowserSupport.CSP", "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';")
+
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
+
+When the test reports, it only shows two test instead of four, the reason being is that we must give our it statements in our test unique names.  So we should go into one of our test,
+'contactUsTest.js', and add 'Test x:' x being th enumber of our test, it should look like this when its done: 
+
+describe('Test Contact Us form WebdriverUni', function() {
+	
+  it('Test 1: Should be able to submit a successful submission via contact us form', function(done) {
+		ContactUs_Page.submitAllInformationViaContactUsForm('joe','Blogs','joe_blogs123@outlook.com','How are you?');
+   	});
+
+
+  it('Test 2: Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
+		ContactUs_Page.submitAllInformationViaContactUsForm('Mike','Woods','mike_woods@mail.com',null);
+    });
+
+  
+  it('Test 3: Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
+		ContactUs_Page.submitAllInformationViaContactUsForm('Sarah',null,'sarah_woods@mail.com',null);
+    });
+
+  it('Test 4: Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
+		ContactUs_Page.submitAllInformationViaContactUsForm(null,'Jomes','sarah_Jomes@mail.com',null);
+    });
+});
+
+To open up previous build results saved in allure, go to the build that you wish to specify, E.g:
+
+allure generate C:/Users/pgoldstein/Desktop/Projects/Allure_Reports/26/allure-results --clean && allure open

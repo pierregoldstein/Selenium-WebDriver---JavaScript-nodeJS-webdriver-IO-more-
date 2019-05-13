@@ -1,0 +1,41 @@
+[ {
+  "uid" : "e1ad185de43584",
+  "name" : "Test 1: Should be able to submit a successful submission via contact us form",
+  "time" : {
+    "start" : 1557768525758,
+    "stop" : 1557768526699,
+    "duration" : 941
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a9836c11e09c71f9",
+  "name" : "Test 2: Should not be able to submit a successful submission via contact us form as all fields are required",
+  "time" : {
+    "start" : 1557768526699,
+    "stop" : 1557768526823,
+    "duration" : 124
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cf4758c9a63f342e",
+  "name" : "Test 4: Should not be able to submit a successful submission via contact us form as all fields are required",
+  "time" : {
+    "start" : 1557768526938,
+    "stop" : 1557768527066,
+    "duration" : 128
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aaeac160f90457ed",
+  "name" : "Test 3: Should not be able to submit a successful submission via contact us form as all fields are required",
+  "time" : {
+    "start" : 1557768526823,
+    "stop" : 1557768526938,
+    "duration" : 115
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

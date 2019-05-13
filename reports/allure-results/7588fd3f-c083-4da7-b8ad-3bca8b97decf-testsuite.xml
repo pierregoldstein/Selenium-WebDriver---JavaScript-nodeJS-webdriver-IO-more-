@@ -1,11 +1,11 @@
 <?xml version='1.0'?>
-<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1556910303678' stop='1556910304935'>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1557768525758' stop='1557768527066'>
     <name>Test Contact Us form WebdriverUni</name>
     <title>Test Contact Us form WebdriverUni</title>
     <test-cases>
-        <test-case start='1556910303678' status='passed' stop='1556910304614'>
-            <name>Should be able to submit a successful submission via contact us form</name>
-            <title>Should be able to submit a successful submission via contact us form</title>
+        <test-case start='1557768525758' status='passed' stop='1557768526699'>
+            <name>Test 1: Should be able to submit a successful submission via contact us form</name>
+            <title>Test 1: Should be able to submit a successful submission via contact us form</title>
             <labels>
                 <label name='language' value='javascript'/>
                 <label name='framework' value='wdio'/>
@@ -19,9 +19,9 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1556910304615' status='passed' stop='1556910304738'>
-            <name>Should not be able to submit a successful submission via contact us form as all fields are required</name>
-            <title>Should not be able to submit a successful submission via contact us form as all fields are required</title>
+        <test-case start='1557768526699' status='passed' stop='1557768526823'>
+            <name>Test 2: Should not be able to submit a successful submission via contact us form as all fields are required</name>
+            <title>Test 2: Should not be able to submit a successful submission via contact us form as all fields are required</title>
             <labels>
                 <label name='language' value='javascript'/>
                 <label name='framework' value='wdio'/>
@@ -35,9 +35,9 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1556910304738' status='passed' stop='1556910304834'>
-            <name>Should not be able to submit a successful submission via contact us form as all fields are required</name>
-            <title>Should not be able to submit a successful submission via contact us form as all fields are required</title>
+        <test-case start='1557768526823' status='passed' stop='1557768526938'>
+            <name>Test 3: Should not be able to submit a successful submission via contact us form as all fields are required</name>
+            <title>Test 3: Should not be able to submit a successful submission via contact us form as all fields are required</title>
             <labels>
                 <label name='language' value='javascript'/>
                 <label name='framework' value='wdio'/>
@@ -51,9 +51,9 @@
             <steps/>
             <attachments/>
         </test-case>
-        <test-case start='1556910304834' status='passed' stop='1556910304934'>
-            <name>Should not be able to submit a successful submission via contact us form as all fields are required</name>
-            <title>Should not be able to submit a successful submission via contact us form as all fields are required</title>
+        <test-case start='1557768526938' status='passed' stop='1557768527066'>
+            <name>Test 4: Should not be able to submit a successful submission via contact us form as all fields are required</name>
+            <title>Test 4: Should not be able to submit a successful submission via contact us form as all fields are required</title>
             <labels>
                 <label name='language' value='javascript'/>
                 <label name='framework' value='wdio'/>

@@ -1,0 +1,7 @@
+[ {
+  "values" : [ "{\"maxInstances\":5,\"browserName\":\"chrome\"}" ],
+  "name" : "capabilities"
+}, {
+  "values" : [ "[\"C:\\\\Users\\\\pgoldstein\\\\Desktop\\\\Projects\\\\Selenium-WebDriver---JavaScript-nodeJS-webdriver-IO-more-\\\\tests\\\\contactUsTest.js\"]" ],
+  "name" : "spec files"
+} ]

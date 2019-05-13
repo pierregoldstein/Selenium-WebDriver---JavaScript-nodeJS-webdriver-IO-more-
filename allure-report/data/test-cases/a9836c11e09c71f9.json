@@ -1,0 +1,57 @@
+{
+  "uid" : "a9836c11e09c71f9",
+  "name" : "Test 2: Should not be able to submit a successful submission via contact us form as all fields are required",
+  "fullName" : "Test Contact Us form WebdriverUni.Test 2: Should not be able to submit a successful submission via contact us form as all fields are required",
+  "historyId" : "6d9ab5dce3256c1101d148887af3f66b",
+  "time" : {
+    "start" : 1557768526699,
+    "stop" : 1557768526823,
+    "duration" : 124
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Test Contact Us form WebdriverUni"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Contact Us form WebdriverUni"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test 2: Should not be able to submit a successful submission via contact us form as all fields are required"
+  }, {
+    "name" : "package",
+    "value" : "Test Contact Us form WebdriverUni"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a9836c11e09c71f9.json",
+  "parameterValues" : [ "chrome" ]
+}

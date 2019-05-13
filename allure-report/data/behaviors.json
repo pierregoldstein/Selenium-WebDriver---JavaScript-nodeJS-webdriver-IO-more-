@@ -1,0 +1,53 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Test 1: Should be able to submit a successful submission via contact us form",
+    "uid" : "e1ad185de43584",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1557768525758,
+      "stop" : 1557768526699,
+      "duration" : 941
+    },
+    "flaky" : false,
+    "parameters" : [ "chrome" ]
+  }, {
+    "name" : "Test 2: Should not be able to submit a successful submission via contact us form as all fields are required",
+    "uid" : "a9836c11e09c71f9",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1557768526699,
+      "stop" : 1557768526823,
+      "duration" : 124
+    },
+    "flaky" : false,
+    "parameters" : [ "chrome" ]
+  }, {
+    "name" : "Test 3: Should not be able to submit a successful submission via contact us form as all fields are required",
+    "uid" : "aaeac160f90457ed",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1557768526823,
+      "stop" : 1557768526938,
+      "duration" : 115
+    },
+    "flaky" : false,
+    "parameters" : [ "chrome" ]
+  }, {
+    "name" : "Test 4: Should not be able to submit a successful submission via contact us form as all fields are required",
+    "uid" : "cf4758c9a63f342e",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1557768526938,
+      "stop" : 1557768527066,
+      "duration" : 128
+    },
+    "flaky" : false,
+    "parameters" : [ "chrome" ]
+  } ]
+}
