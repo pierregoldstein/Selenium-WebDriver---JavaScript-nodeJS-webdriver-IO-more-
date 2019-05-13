@@ -1,0 +1,85 @@
+Moving webdriver.io from v4 to v5
+
+Navigate to https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md to view the changes made from version 4 to version 5
+of webdriver.io library.  Also go to webdriver.io and look into the guides and api tabs for more information of the new implementations
+and changes made in webdriver.io 5.
+
+Navigate to https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html and there will be a set of instructions on how to migrate 
+form version 4 to version 5 of webdriver.io:  
+
+- read the changelog to understand all breaking changes
+- remove all wdio-* packages from your package.json
+- remove your node_modules directory
+- install the latest version of webdriverio: $ npm install webdriverio@latest
+- install the new wdio testrunner: $ npm install @wdio/cli --save-dev
+- if you have a wdio.conf.js in your root directory, create a backup: $ cp wdio.conf.js wdio_backup.conf.js
+- rerun the configuration wizard: $ ./node_modules/.bin/wdio config
+- merge custom modifications of your old wdio_backup.conf.js into your new config file. Don't merge everything at once - just begin with the basic setup using no services and just the e.g. spec reporter to run tests locally and work torwards a full migration
+- take the simplest test in your suite and rename the commands according to the changelog
+- have your log directory set in your config (e.g. outputDir: __dirname) to ensure you can see everything that is going on including errors (you can later set it to a proper log directory)
+- attempt to run the the test suite you modified $ ./node_modules/.bin/wdio wdio.config.js --spec ./path/to/modified/test.js
+- repeat on your remaining test files
+- add reporters and services back into your wdio.conf.js, and see if they work as expected (Note: it is possible that services or reporters that you have used aren't ported to v5 yet, if so, please raise an issue in the repository of that community package or try to port it)
+
+Step 1:  Go into 'package.json' located in the root directory of the project folder and delete any dependecies that have 'wdio'.\
+Step 2:  Delete the node modules folder located in the root directory.
+Step 3:  run 'npm install webdriverio@latest' in gitbash from the root directory of the project. 
+Step 4:  From the same Gitbash run 'npm install @wdio/cli --save-dev'
+Step 5:  Create a backup of your wdio.conf.js file, from the same gitbash terminal type 'cp wdio.conf.js wdio_backup.conf.js'
+Step 6:  From the same terminal, run './node_modules/.bin/wdio config'
+Step 7:  After going through the creation o fthe 'wdio.conf.js', make chages to the file by adding previous code from our backup file:
+
+At the top of the file add:
+
+var baseURL;
+
+if(process.env.SERVER === 'prod'){
+    baseURL = 'https://www.google.com'
+}else{
+    baseURL = 'http://www.webdriveruniversity.com'
+}
+
+change the 'specs' & 'exclude' object:
+
+specs: [
+        './tests/*.js'
+    ],
+    // Patterns to exclude.
+    exclude: [
+        // 'path/to/excluded/files'
+        './pageObjects/*_Page.js'
+    ],
+
+Change 'logLevel' to 'trace.
+In 'capibilities' object, change 'browserName' to 'chrome'.
+Change 'baseUrl' to 'baseURL'.
+Uncomment the 'services' object and add the value ['selenium-standalone'].
+Uncomment the 'reporters' object.
+
+For more information on wdio.conf.js file, https://webdriver.io/docs/configurationfile.html.
+
+Step 8:  If your previous terminal is still open, type 'npm intsall webdriverio@latest --save -dev' 
+Step 9:  In the same terminal, type 'npm install @wdio/selenium-standalone-service --save-dev'.
+Step 10:  Repeat with npm install mocha@latest --save-dev
+Step 11:  Repeat with npm install chai@latest --save-dev
+Step 12:  Repeat with npm install @wdio/dot-reporter --save-dev
+Step 13:  Repeat with npm install loglevel-plugin-prefix --save-dev
+
+Step 14:  We now need to modify our contactUstest.js and contactUs_Page.js:
+on the top of the contactUsTest.js, change the beforeEach function to resemble this:
+
+beforeEach(async() => {
+	await browser.url('/Contact-Us/contactus.html');
+});
+
+Step 15:  Update the syntax of the functions to represent ecma 6 styling using arrow functions, () =>.
+Step 16:  To update our code and break up the assertations made on our contactUs_Page.js file, we will comment out the 
+old functions confirmSuccessfulSubmission() and confirmUnsuccessfulSubmission() , then replace them with:
+
+get successfulSubmissionHeader(){return $("#contact_reply h1");}
+get unsuccessfulSubmissionHeader(){return $("body"); }
+
+get successfulSubmissionHeaderText(){return this.successfulSubmissionHeader.getText();}
+get unsuccessfulSubmissionHeaderText(){return this.unsuccessfulSubmissionHeader.getText();}
+
+with the rest of the getters on this file.  This will allow us to move our assertions to the conactUstest.js file.

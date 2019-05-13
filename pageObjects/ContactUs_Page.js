@@ -12,7 +12,13 @@ class ContactUs_Page {
 	get lastName() { return $("[name='last_name']");}
 	get comments() { return $("textarea");}
 	get emailAddress() { return $("[name='email']");}
-	get submitButton() { return $("[type='submit']");}
+    get submitButton() { return $("[type='submit']");}
+    
+    get successfulSubmissionHeader(){return $("#contact_reply h1");}
+    get unsuccessfulSubmissionHeader(){return $("body"); }
+
+    get successfulSubmissionHeaderText(){return this.successfulSubmissionHeader.getText();}
+    get unsuccessfulSubmissionHeaderText(){return this.unsuccessfulSubmissionHeader.getText();}
 	// get successfulSubmissionHeader() { return $("#contact_reply h1");}
     // get unsuccessfulSubmissionHeader() { return $("body");}
     
@@ -50,31 +56,31 @@ class ContactUs_Page {
             return this.comments.setValue(comments);
         }
         this.submitButton.click();
-        this.confirmSuccessfulSubmission();
+        // this.confirmSuccessfulSubmission();
     }
     
-    confirmSuccessfulSubmission() {
-        var successfulSubmissionHeader = "#contact_reply h1";
-        var validateSubmissionHeader = browser.waitUntil(function() {
-            return browser.getText(successfulSubmissionHeader) == 'Thank You for your Message!'
-        }, 3000)
-        expect(validateSubmissionHeader, 'Successful Submission Message does not Exist!').to.be.true;
-    }
+    // confirmSuccessfulSubmission() {
+    //     var successfulSubmissionHeader = "#contact_reply h1";
+    //     var validateSubmissionHeader = browser.waitUntil(function() {
+    //         return browser.getText(successfulSubmissionHeader) == 'Thank You for your Message!'
+    //     }, 3000)
+    //     expect(validateSubmissionHeader, 'Successful Submission Message does not Exist!').to.be.true;
+    // }
     
-    confirmUnsuccessfulSubmission() {
-        var unsuccessfulSubmissionHeader = "body";
-        var validateSubmissionHeader = browser.waitUntil(function() {
-            return browser.getText(unsuccessfulSubmissionHeader) == 'Error: all fields are required'
-        }, 3000)
-        expect(browser.getText(unsuccessfulSubmissionHeader)).to.include('Error: all fields are required');
-    }
-    emailConfirmUnsuccessfulSubmission() {
-        var unsuccessfulSubmissionHeader = "body";
-        var validateSubmissionHeader = browser.waitUntil(function() {
-            return browser.getText(unsuccessfulSubmissionHeader) == 'Error: all fields are required\nError: Invalid email address'
-        }, 3000)
-        expect(browser.getText(unsuccessfulSubmissionHeader)).to.include('Error: all fields are required\nError: Invalid email address');
-    }
+    // confirmUnsuccessfulSubmission() {
+    //     var unsuccessfulSubmissionHeader = "body";
+    //     var validateSubmissionHeader = browser.waitUntil(function() {
+    //         return browser.getText(unsuccessfulSubmissionHeader) == 'Error: all fields are required'
+    //     }, 3000)
+    //     expect(browser.getText(unsuccessfulSubmissionHeader)).to.include('Error: all fields are required');
+    // }
+    // emailConfirmUnsuccessfulSubmission() {
+    //     var unsuccessfulSubmissionHeader = "body";
+    //     var validateSubmissionHeader = browser.waitUntil(function() {
+    //         return browser.getText(unsuccessfulSubmissionHeader) == 'Error: all fields are required\nError: Invalid email address'
+    //     }, 3000)
+    //     expect(browser.getText(unsuccessfulSubmissionHeader)).to.include('Error: all fields are required\nError: Invalid email address');
+    // }
 }
 
 
