@@ -1,53 +1,65 @@
-var ContactUs_Page = require("../pageObjects/ContactUs_Page.js"); //Referncing the ContacUs_Page.js
+var ContactUs_Page = require("../pageObjects/ContactUs_Page.js"); // Referncing the ContacUs_Page.js
+var request = require('sync-request');
 
 
-beforeEach(async() => {
-	await browser.url('/Contact-Us/contactus.html');
-});
-// beforeEach(function() {
-// 	browser.url('/Contact-Us/contactus.html');
-// })
+beforeEach(async () => {
+    await browser.url('/Contact-Us/contactus.html');
+})
 
 describe('Test Contact Us form WebdriverUni', () => {
-	
-  it('Test 1: Should be able to submit a successful submission via contact us form', () => {
-  	// ContactUs_Page.setFirstName('joe');
-  	// ContactUs_Page.setLastName('Blogs');
-  	// ContactUs_Page.setEmailAddress('joe_blogs123@outlook.com');
-  	// ContactUs_Page.setComments('How are you?');
-  	// ContactUs_Page.clickSubmitButton();
-	// ContactUs_Page.confirmSuccessfulSubmission();
-		
-		ContactUs_Page.submitAllInformationViaContactUsForm('joe','Blogs','joe_blogs123@outlook.com','How are you?');
-   	});
+
+    var res = request('GET', 'http://jsonplaceholder.typicode.com/posts/1/comments'); // Create the variable to "GET" json data
+    var contacUsDetails = JSON.parse(res.getBody().toString('utf8')); // Format the JSON data
+
+    contacUsDetails.slice(0, 5).forEach(function (contactUsDetails) {
+        it('Test 1: Should be able to submit a successful submission via contact us form', () => {
+
+						ContactUs_Page.submitAllInformationViaContactUsForm(contacUsDetails.name, contacUsDetails.name, contacUsDetails.email, contacUsDetails.body);
+						ContactUs_Page.successfulSubmissionHeader.waitForDisplayed(3000);
+						try{
+							expect(ContactUs_Page.successfulSubmissionHeaderText).to.equal("Thank You for your Message!");
+						}catch(err){
+							console.log("Exception: "+err);
+							assert.fail();
+						}
+        });
 
 
-  // it('Test 2: Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
-  // 	// ContactUs_Page.setFirstName('Mike');
-  // 	// ContactUs_Page.setLastName('Woods');
-  // 	// ContactUs_Page.setEmailAddress('mike_woods@mail.com');
-  // 	// ContactUs_Page.clickSubmitButton();
-	// // ContactUs_Page.confirmUnsuccessfulSubmission();
+        it('Test 2: Should not be able to submit a successful submission via contact us form as all fields are required', () => {
+           
+            ContactUs_Page.submitAllInformationViaContactUsForm(contacUsDetails.name, contacUsDetails.name, contacUsDetails.email, null);
+						ContactUs_Page.unsuccessfulSubmissionHeader.waitForDisplayed(3000);
+						try{
+							expect(ContactUs_Page.unsuccessfulSubmissionHeaderText).to.have.string("Error: all fields are required");
+						}catch(err){
+							console.log("Exception: "+err);
+							assert.fail();
+						}
+        });
 
-	// 	ContactUs_Page.submitAllInformationViaContactUsForm('Mike','Woods','mike_woods@mail.com',null);
-		
-  //   });
 
-  
-  // it('Test 3: Should not be able to submit a successful submission via contact us form as all fields are required', function(done) {
-  // 	// ContactUs_Page.setFirstName('Sarah');
-  // 	// ContactUs_Page.setEmailAddress('sarah_woods@mail.com');
-  // 	// ContactUs_Page.clickSubmitButton();
-	// // ContactUs_Page.confirmUnsuccessfulSubmission();
+        it('Test 3: Should not be able to submit a successful submission via contact us form as all fields are required', () => {
+            
+						ContactUs_Page.submitAllInformationViaContactUsForm(contacUsDetails.name, null, contacUsDetails.email, null);
+						ContactUs_Page.unsuccessfulSubmissionHeader.waitForDisplayed(3000);
+						try{
+							expect(ContactUs_Page.unsuccessfulSubmissionHeaderText).to.have.string("Error: all fields are required");
+						}catch(err){
+							console.log("Exception: "+err);
+							assert.fail();
+						}
+        });
 
-	// 	ContactUs_Page.submitAllInformationViaContactUsForm('Sarah',null,'sarah_woods@mail.com',null);
-  //   });
-
-  it('Test 2: Should not be able to submit a successful submission via contact us form as all fields are required', () => {
-    // ContactUs_Page.setLastName('Jomes');
-  	// ContactUs_Page.setEmailAddress('sarah_Jomes@mail.com');
-  	// ContactUs_Page.clickSubmitButton();
-		// ContactUs_Page.confirmUnsuccessfulSubmission();
-		ContactUs_Page.submitAllInformationViaContactUsForm(null,'Jomes','sarah_Jomes@mail.com',null);
+        it('Test 4: Should not be able to submit a successful submission via contact us form as all fields are required', () => {
+           
+						ContactUs_Page.submitAllInformationViaContactUsForm(null, contacUsDetails.name, contacUsDetails.email, null);
+						ContactUs_Page.unsuccessfulSubmissionHeader.waitForDisplayed(3000);
+						try{
+							expect(ContactUs_Page.unsuccessfulSubmissionHeaderText).to.have.string("'Error: all fields are required\nError: Invalid email address'");
+						}catch(err){
+							console.log("Exception: "+err);
+							assert.fail();
+						}
+        });
     });
 });

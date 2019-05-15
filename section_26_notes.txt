@@ -68,6 +68,11 @@ Step 13:  Repeat with npm install loglevel-plugin-prefix --save-dev
 Step 14:  We now need to modify our contactUstest.js and contactUs_Page.js:
 on the top of the contactUsTest.js, change the beforeEach function to resemble this:
 
+*** The word “async” before a function means one simple thing: a function always returns a promise. Even If a function 
+actually returns a non-promise value, prepending the function definition with the “async” keyword directs JavaScript to 
+automatically wrap that value in a resolved promise. ***
+*** The keyword await makes JavaScript wait until that promise settles and returns its result. ***
+
 beforeEach(async() => {
 	await browser.url('/Contact-Us/contactus.html');
 });
@@ -83,3 +88,52 @@ get successfulSubmissionHeaderText(){return this.successfulSubmissionHeader.getT
 get unsuccessfulSubmissionHeaderText(){return this.unsuccessfulSubmissionHeader.getText();}
 
 with the rest of the getters on this file.  This will allow us to move our assertions to the conactUstest.js file.
+
+Some of the new webdriverio commands:
+
+browser.waitForDisplayed(ms,reverse,error) - Wait for an element for the provided amount of milliseconds to be displayed or not displayed.
+Parameters:
+
+Name	    Type	Details
+ms
+optional	param	time in ms (default: 500)
+
+reverse
+optional	param	if true it waits for the opposite (default: false)
+
+error
+optional	param	if exists it overrides the default error message
+
+Step 17:  Add the new command to our contactUsTest.js like so:
+
+ContactUs_Page.successfulSubmissionHeader.waitForDisplayed(3000);
+
+Step 18:  We are going to add chai assertions to the contactUsTest.js by adding:
+
+expect(ContactUs_Page.successfulSubmissionHeaderText).to.equal("Thank You for your Message!");
+
+for successfull calls and:
+
+expect(ContactUs_Page.unsuccessfulSubmissionHeaderText).to.have.string("Error: all fields are required");
+
+for unsucessfull calls,
+
+this calls the function inside our contactUs_Page.js  that displays the text return for our submission header.
+
+Step 19:  Lets add try/catch blocks to determine if our assretions worked.
+
+try{
+    expect(ContactUs_Page.successfulSubmissionHeaderText).to.equal("Thank You for your Message!");
+}catch(err){
+	console.log("Exception: "+err);
+	assert.fail();
+}
+
+and
+
+try{
+	expect(ContactUs_Page.unsuccessfulSubmissionHeaderText).to.have.string("Error: all fields are required");
+}catch(err){
+	console.log("Exception: "+err);
+	assert.fail();
+}
